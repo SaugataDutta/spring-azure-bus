@@ -1,0 +1,6 @@
+azure:
+  servicebus:
+    connection-string: Endpoint=sb://servicepoc.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ldwRGm347GjHDcFlTiKaaQ/5xP04Qt0WRK+A6NvXbt0=
+    topic-name: mytopic
+    subscription-name: S1
+    subscription-receive-mode: peeklock
