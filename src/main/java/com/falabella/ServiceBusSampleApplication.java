@@ -5,7 +5,13 @@
  */
 package com.falabella;
 
-import com.microsoft.azure.servicebus.*;
+import com.microsoft.azure.servicebus.ExceptionPhase;
+import com.microsoft.azure.servicebus.IMessage;
+import com.microsoft.azure.servicebus.IMessageHandler;
+import com.microsoft.azure.servicebus.Message;
+import com.microsoft.azure.servicebus.MessageHandlerOptions;
+import com.microsoft.azure.servicebus.SubscriptionClient;
+import com.microsoft.azure.servicebus.TopicClient;
 import com.microsoft.azure.servicebus.primitives.ServiceBusException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -43,7 +49,8 @@ public class ServiceBusSampleApplication implements CommandLineRunner {
     }
 
     private void receiveSubscriptionMessage() throws ServiceBusException, InterruptedException {
-        subscriptionClient.registerMessageHandler(new MessageHandler(), new MessageHandlerOptions());
+        subscriptionClient.registerMessageHandler(new MessageHandler(), new
+                MessageHandlerOptions());
 
         TimeUnit.SECONDS.sleep(5);
         subscriptionClient.close();
